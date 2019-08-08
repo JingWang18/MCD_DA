@@ -15,7 +15,7 @@ do
     if ! [ -e "${base_gta}/zips/${i}_images.zip" ];
     then 
         echo "Starting download of images: ${i}"
-        #wget -P ${base_gta} ${img_file}/zips
+        #wget -P ${base_gta} ${img_file}/zips --no-check-certificate
     fi
     if [ -e "${base_gta}/images" ];
     then
@@ -28,7 +28,7 @@ do
     if ! [ -e "${base_gta}/zips/${i}_labels.zip" ];
     then
         echo "Starting download of labels: ${i}"
-        wget -P ${base_gta} ${anno_file}/zips
+        wget -P ${base_gta} ${anno_file}/zips --no-check-certificate
     fi
     if [ -e "${base_gta}/labels" ];
     then
@@ -40,6 +40,6 @@ done
 
 if ! [ -e "${base_gta}/zips/read_mapping.zip" ]
 then
-    wget -P ${base_gta}/zips https://download.visinf.tu-darmstadt.de/data/from_games/code/read_mapping.zip
+    wget -P ${base_gta}/zips https://download.visinf.tu-darmstadt.de/data/from_games/code/read_mapping.zip --no-check-certificate
 fi
 unzip ${base_gta}/zips/read_mapping.zip -d ${base_gta}
