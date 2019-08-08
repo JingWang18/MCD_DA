@@ -15,7 +15,7 @@ do
     if ! [ -e "${base_gta}/zips/${i}_images.zip" ];
     then 
         echo "Starting download of images: ${i}"
-        #wget -P ${base_gta} ${img_file}/zips --no-check-certificate
+        #wget ${base_gta} ${img_file}/zips --no-check-certificate
     fi
     if [ -e "${base_gta}/images" ];
     then
@@ -28,7 +28,7 @@ do
     if ! [ -e "${base_gta}/zips/${i}_labels.zip" ];
     then
         echo "Starting download of labels: ${i}"
-        wget -P ${base_gta} ${anno_file}/zips --no-check-certificate
+        wget ${base_gta} ${anno_file}/zips --no-check-certificate
     fi
     if [ -e "${base_gta}/labels" ];
     then
